@@ -2,32 +2,167 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #FBFADA;
+}
+.tab {
+  display: flex;
+  justify-content: center;
+  background-color: #FBFADA;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.tab button { 
+  background-color: #ADBC9F;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 300px; 
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.tab button:hover {
+  background-color: #436850;
+}
+
+.tab button.active {
+  color: #ffffff;
+  background-color: #436850;
+}
+
+.tabcontent {
+  display: none;
+  background-color: #FBFADA;
+}
+
+.tabcontent.active {
+  display: block;
+  background-color: #FBFADA;
+}
+
+.addTask {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+  margin-right: 35px;
+  background-color: #FBFADA;
+  padding: 10px;
+}
+
+.addTaskButton {
+  background-color: #436850;
+  color: #fff;
+  border: none;
+  padding: 5px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.addTaskButton:hover {
+  background-color: #12372A;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.task-input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.modal button {
+  background-color: #ADBC9F;
+  color: #000000;
+  border: none;
+  padding: 3px 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #436850;
+  color: #fff;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px;
+  background-color: #ADBC9F;
+}
+
+.task-list li {
+  border-bottom: 1px solid #ccc; 
+  padding: 10px 0;
+  margin-left: 20px;
+  position: relative;
+  word-wrap: break-word; 
+  max-width: 125ch; 
+}
+
+.task-list li:last-child {
+  border-bottom: none; 
+}
+
+.task-list li button {
+  position: absolute;
+  right: -20%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px; 
+}
+
+.complete-button {
+  background-color: #436850;
+  padding: 2px 10px;
+  border-radius: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button {
+  background-color: #436850;
+padding: 2px 10px;
+border-radius: 20px;
+  margin-right: 168px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #436850;
+padding: 2px 10px;
+border-radius: 20px;
+  margin-right: 100px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #12372A;
+}
+.delete-button:hover {
+  background-color: #12372A;
+}
+.complete-button:hover {
+  background-color: #12372A;
 }
